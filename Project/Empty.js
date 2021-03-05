@@ -8,15 +8,9 @@ function main()
     console.log("Menu"); 
     initCanvas(); 
     draw(); 
-
-
+   
 }
 
-
-  // Create circle
-
-//ctx.fillStyle = 'red';
-//ctx.fill(circle);
 
 
  
@@ -154,43 +148,77 @@ var canvas = document.getElementById('mycanvas');
 ctx.fillText('Sonic The Hedgehog',200,100);
 
 
+ctx.beginPath();
+const rectangle2 = new Path2D()
+ctx.fillStyle = "Blue";
+ctx.fill(rectangle2);
+ctx.fillRect(600, 250, 150, 70);
 
+ctx.beginPath();
+const rectangle3 = new Path2D()
+ctx.fillStyle = "Yellow";
+ctx.fill(rectangle3);
+ctx.fillRect(600, 350, 150, 70);
 
 // args are x,y,width,height 
 
 ctx.beginPath();
 const rectangle = new Path2D()
-ctx.fillStyle = "blue";
+ctx.fillStyle = "red";
 ctx.fill(rectangle);
-
+ctx.fillRect(600, 150, 150, 70);
 // Listen for mouse moves
-canvas.addEventListener('mousemove', function(event) {
-    // Check whether point is inside circle
-    mouse = oMousePos(canvas, event);
-    if (ctx.isPointInPath( mouse.x,mouse.y)) {
-       
-      ctx.fillStyle = 'green';
-      
-    }
-    else {
-      ctx.fillStyle = 'red';
-    }
-  
-    
-    ctx.fillRect(600, 150, 150, 70);
-});
+
 ctx.fillStyle = 'Yellow';
        ctx.font = 'italic 20pt Rockwell';
        ctx.textBaseLine = "bottom";
        
-ctx.fillText('PlayGame',600,200);
+ctx.fillText('PlayGame',615,195);
+ctx.fillStyle = 'red';
+       ctx.font = 'italic 20pt Rockwell';
+       ctx.textBaseLine = "bottom";
+       
+ctx.fillText('Settings',615,295);
+ctx.fillStyle = 'BLUE';
+       ctx.font = 'italic 20pt Rockwell';
+       ctx.textBaseLine = "bottom";
+       
+ctx.fillText('Character',615,395);
+//isInside(pos, rect);
+//getMousePos(canvas, event);
+}
 
 
-function oMousePos(canvas, evt) {
-    var ClientRect = canvas.getBoundingClientRect();
-      return { //objeto
-      x: Math.round(evt.clientX - ClientRect.left),
-      y: Math.round(evt.clientY - ClientRect.top)
-  }
-  }
-} 
+//Function to get the mouse position
+function getMousePos(canvas, event) {
+    var rect = canvas.getBoundingClientRect();
+    return {
+        x: event.clientX - rect.left,
+        y: event.clientY - rect.top
+    };
+}
+//Function to check whether a point is inside a rectangle
+function isInside(pos, rect){
+    return pos.x > rect.x && pos.x < rect.x+rect.width && pos.y < rect.y+rect.height && pos.y > rect.y
+}
+
+
+//The rectangle should have x,y,width,height properties
+var rect = {
+    x:250,
+    y:350,
+    width:200,
+    height:100
+};
+//Binding the click event on the canvas
+// canvas.addEventListener('click', function(evt) {
+//     var mousePos = getMousePos(canvas, evt);
+
+//     if (isInside(mousePos,rect)) {
+//         alert('clicked inside rect');
+//     }else{
+//         alert('clicked outside rect');
+//     }   
+// }, false);
+
+
