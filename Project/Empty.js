@@ -5,9 +5,12 @@
 
 function main()
 {
-    console.log("Menu"); 
-    initCanvas(); 
-    draw(); 
+    //console.log("Menu"); 
+    //initCanvas(); 
+    var game = new Game;
+    game.initWorld();
+    game.update();
+    //draw(); 
    
 }
 
@@ -36,9 +39,6 @@ function initCanvas()
 // Use the document object to create a new element canvas. 
 
     var canvas = document.createElement("canvas"); 
-
-
-var canvas = document.createElement("canvas"); 
 
 // Assign the canvas an id so we can reference it elsewhere. 
 
