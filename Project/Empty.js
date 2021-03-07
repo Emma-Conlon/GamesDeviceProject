@@ -6,12 +6,12 @@
 function main()
 {
     //console.log("Menu"); 
-    //initCanvas(); 
     var game = new Game;
+    initCanvas(); 
     game.initWorld();
     game.update();
-    //draw(); 
-   
+    draw(); 
+    this.game.draw();
 }
 
 
@@ -186,6 +186,7 @@ ctx.fillStyle = 'BLUE';
 ctx.fillText('Character',615,395);
 //isInside(pos, rect);
 //getMousePos(canvas, event);
+
 }
 
 

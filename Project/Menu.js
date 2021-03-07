@@ -1,5 +1,5 @@
-/*const canvas = Empty.document.getElementById('canvas');
-const ctx = Empty.canvas.getContext('2d');
+/*const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext('2d');
 
 // Create circle
 const circle = new Path2D();

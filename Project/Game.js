@@ -2,13 +2,7 @@ class Game {
 
     constructor() {
 this.boundRecursiveUpdate = () => this.update(this);
-var canvas = document.createElement("canvas");
-canvas.id = 'mycanvas';
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
 
-var ctx = canvas.getContext("2d");
-document.body.appendChild(canvas);  
 
     
 
