@@ -5,10 +5,13 @@
 
 function main()
 {
-    console.log("Menu"); 
+    //console.log("Menu"); 
+    var game = new Game;
     initCanvas(); 
+    game.initWorld();
+    game.update();
     draw(); 
-   
+    this.game.draw();
 }
 
 
@@ -36,9 +39,6 @@ function initCanvas()
 // Use the document object to create a new element canvas. 
 
     var canvas = document.createElement("canvas"); 
-
-
-var canvas = document.createElement("canvas"); 
 
 // Assign the canvas an id so we can reference it elsewhere. 
 
@@ -186,6 +186,7 @@ ctx.fillStyle = 'BLUE';
 ctx.fillText('Character',615,395);
 //isInside(pos, rect);
 //getMousePos(canvas, event);
+
 }
 
 
